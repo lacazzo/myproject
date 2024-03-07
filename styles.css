@@ -1,0 +1,191 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #D8BFD8; /* Цвет фона страницы */
+    overflow: hidden;
+    position: relative; /* необходимо для позиционирования псевдоэлемента относительно body */
+}
+
+body::after {
+    content: '';
+    background-image: url('https://avatars.mds.yandex.net/get-altay/240733/2a0000015c533cf775f8faaec0f2e582ff29/orig'); /* Замените ссылку на URL вашей фотографии */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* фон не прокручивается с содержимым */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* позволяет тексту находиться перед этим слоем */
+    opacity: 0.1; /* прозрачность фотографии, чтобы не перекрывать текст полностью */
+    animation: waves 10s ease infinite; /* Анимация для волн */
+}
+
+@keyframes waves {
+    0% {
+        transform: translateY(0) rotate(0);
+    }
+    50% {
+        transform: translateY(-25px) rotate(2deg);
+    }
+    100% {
+        transform: translateY(0) rotate(-2deg);
+    }
+}
+
+.content {
+	
+    position: relative;
+	color: black;
+    z-index: 1; /* делает содержимое (текст) над слоем с фоновой картинкой */
+    padding: 20px;
+}
+.black-text{
+    color: black;
+	text-align: center;
+}
+.small-image {
+    width: 500px; /* Задайте размеры в соответствии с вашими требованиями */
+    height: auto; /* Сохраняет пропорции изображения */
+    margin: 10px; /* Добавляет немного пространства между изображениями */
+}
+.table-container {
+    width: 50%; /* Устанавливаем ширину контейнера для таблицы */
+    margin: 0 auto; /* Центрируем контейнер по горизонтали */
+}
+
+.styled-table {
+    width: 100%; /* Устанавливаем ширину таблицы */
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.styled-table th,
+.styled-table td {
+    border: 1px solid #000;
+    padding: 8px;
+}
+
+.styled-table th {
+    background-color: #f2f2f2;
+}
+body {
+    overflow-y: scroll; /* Добавляем вертикальную прокрутку */
+    scroll-behavior: smooth; /* Плавная прокрутка */
+}
+.content1 {
+	text-align: center;
+    position: relative;
+	color: black;
+    z-index: 1; /* делает содержимое (текст) над слоем с фоновой картинкой */
+    padding: 20px;
+}
+.styled-table1 {
+    width: 100%; /* Устанавливаем ширину таблицы */
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.styled-table1 th,
+.styled-table1 td {
+    border: 1px solid #000;
+    padding: 8px;
+}
+
+.styled-table1 th {
+    background-color: #f2f2f2;
+}
+.answers {
+    padding: 20px;
+    line-height: 1.6;
+	color: black;
+}
+h1 {
+    text-align: center; /* Выравниваем заголовки по центру */
+	font-weight: bold;
+}
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.zoom-image {
+  display: block;
+  width: 150px;
+  overflow: hidden;
+  position: relative;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.zoom-image:hover {
+  border-color: #ff00ff; /* Измените цвет рамки на ваш выбор */
+  box-shadow: 0 0 10px #ff00ff; /* Измените цвет тени на ваш выбор */
+  transform: scale(1.1); /* Увеличивает изображение при наведении */
+}
+
+.zoom-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.zoom-image:hover img {
+  transform: scale(1.1); /* Увеличивает изображение при наведении */
+}
+
+.caption {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  background-color: rgba(255, 255, 255, 0.8); /* Прозрачный белый фон для текста */
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.zoom-image:hover .caption {
+  opacity: 1;
+}
+
+.image-container:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150px;
+  height: 100%;
+  border: 2px solid violet; /* Фиолетовая рамка */
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+.highlight-link {
+  position: relative;
+  color: #333; /* Цвет текста ссылки */
+  text-decoration: none;
+}
+
+/* Стили для подсветки при наведении */
+.highlight-link::before {
+  content: '';
+  position: absolute;
+  bottom: -2px; /* Расположение подсветки снизу */
+  left: 0;
+  width: 100%;
+  height: 2px; /* Толщина подсветки */
+  background-color: #ff7f50; /* Цвет подсветки */
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out;
+}
+
+/* При наведении мышкой */
+.highlight-link:hover::before {
+  visibility: visible;
+  transform: scaleX(1);
+}
