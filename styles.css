@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #D8BFD8; /* Цвет фона страницы */
+    background-color: #FF4500; /* Цвет фона страницы */
     overflow: hidden;
     position: relative; /* необходимо для позиционирования псевдоэлемента относительно body */
 }
